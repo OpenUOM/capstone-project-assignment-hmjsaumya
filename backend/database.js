@@ -22,7 +22,7 @@ const dbinitialize = async () => {
     testBase.resetDatabase(knex_db);
 }
 
-// done
+
 const readTeachers = async () => {
     const sql = `SELECT * FROM teacher`
     return new Promise((resolve, reject) => {
@@ -36,15 +36,14 @@ const readTeachers = async () => {
             });
     });
 }
-// done
 
-// done
+
 
 const readTeacherInfo = async (id) => {
     const sql = `SELECT * FROM teacher WHERE id = ?`
     return new Promise((resolve, reject) => {
         knex_db
-            .raw(sql, [id])
+            .raw(sql,[id])
             .then((teacher) => {
                 resolve(teacher);
             })
@@ -54,9 +53,8 @@ const readTeacherInfo = async (id) => {
     });
 }
 
-// done
 
-// done
+
 const addTeacher = async (id, name, age) => {
     const sql = `INSERT INTO teacher(id,name,age) values (?, ?, ?)`
     return new Promise((resolve, reject) => {
@@ -70,9 +68,9 @@ const addTeacher = async (id, name, age) => {
             });
     });
 }
-//done
 
-// done
+
+
 const updateTeacher = async (name, age, id) => {
     const sql = `UPDATE teacher SET name=?, age=? WHERE id=?`
     return new Promise((resolve, reject) => {
@@ -86,9 +84,8 @@ const updateTeacher = async (name, age, id) => {
             });
     });
 }
-// done
 
-// done
+
 
 const deleteTeacher = async (id) => {
     const sql = `DELETE FROM teacher WHERE id = ?`
@@ -141,7 +138,7 @@ const addStudent = async (id, name, age, hometown) => {
     const sql = `INSERT INTO student(id,name,age,hometown) values (?, ?, ?, ?)`
     return new Promise((resolve, reject) => {
         knex_db
-            .raw(sql, [is, name, age, hometown])
+            .raw(sql, [id, name, age, hometown])
             .then(() => {
                 resolve({status:"Successfully inserted Student"});
             })
@@ -159,7 +156,7 @@ const updateStudent = async (name, age, hometown, id) => {
     const sql = `UPDATE student SET name=?, age=?, hometown=? WHERE id=?`
     return new Promise((resolve, reject) => {
         knex_db
-            .raw(sql, [is, name, age, hometown])
+            .raw(sql, [name, age, hometown, id])
             .then(() => {
                 resolve({status: "Successfully updated student"});
             })
