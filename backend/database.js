@@ -175,7 +175,7 @@ const deleteStudent = async (id) => {
         knex_db
             .raw(sql, [id])
             .then(() => {
-                resolve({status: "Successfully deleted Teacher"});
+                resolve({status: "Successfully deleted student"});
             })
             .catch((error) => {
                 reject(error);
