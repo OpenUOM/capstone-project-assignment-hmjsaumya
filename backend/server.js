@@ -1,5 +1,3 @@
-
-
 const express = require ("express");
 
 const {
@@ -46,6 +44,7 @@ app.post("/getTeacherInfo", async function (req, res) {
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(data));
 });
+
 
 app.post("/addTeacher", async function (req, res) {
   let reqBody = req.body;
