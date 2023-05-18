@@ -1,3 +1,4 @@
+// This is a comment 
 const dbConnection = require("./sqlite");
 
 dbConnection
