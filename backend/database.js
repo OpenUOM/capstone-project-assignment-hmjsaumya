@@ -1,4 +1,4 @@
-// This is a comment 
+// This is a comment yes of course
 const dbConnection = require("./sqlite");
 
 dbConnection
